@@ -1,0 +1,1 @@
+{"coin":"ARGY","coin_market":"ARGY/USDT","available":100000,"limit":1500,"step_price":0.000005,"min_price":0.00005,"max_price":0.00016,"profit":1.38,"pad_diff":10000000,"gridBuy":[0.00008,0.000095,0.00009,0.000085,0.0001,0.000075],"gridSell":[0.0001242,0.0001173,0.000138,0.0000956],"average_price":0.00007371221981183432,"total":61679.486,"max_coins":10}

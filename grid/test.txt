@@ -1,0 +1,1 @@
+{"coin":"IOTX","coin_market":"IOTX/USDT","available":0,"limit":10,"step_price":0.000050,"min_price":0.020000,"max_price":0.080000,"profit":1.18,"pad_diff":1000000,"buy":[],"sell":[],"gridBuy":[],"gridSell":[],"average_price":0,"total":0}
