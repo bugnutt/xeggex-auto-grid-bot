@@ -34,7 +34,7 @@ const keep_coin = 20/100; // buy 100 => keep 20 => sale 80
  */
 const grid_near = 5; // 0-100 Ex. 8 % of 50 point = 8/100 * 50 
 const grid_amount = 100; // amount
-const grid_profit = 30; // 0 = disabled, 1-100 use all coin 25% of grid buys
+const grid_profit = 25; // 0 = disabled, 1-100 use all coin 25% of grid buys
 const grid_limit_ref_cost = 0.2; // 0 = disabled, 0.25 usdt per one grid.
 
 /**
@@ -275,7 +275,7 @@ var ActionLimitOrder = (coin_symbol)=>{
     /**
      *  LOGIC build Grid 
      */
-    if (diff == 0 || (diff / step) * 100 <= grid_near ) { // % of grid  // || (diff / step) * 100 >= (100-grid_near)
+    if (diff == 0 || (diff / step) * 100 <= grid_near || (diff / step) * 100 >= (100-grid_near) ) { // % of grid  // 
 
       let found0 = coin_config.gridBuy.find((value) => value == grid_buy);
       if (found0 === undefined) {
@@ -291,11 +291,11 @@ var ActionLimitOrder = (coin_symbol)=>{
         /**
          * BUY ทันที
          */
-        let newBuyOrder = await restapiTrade.createMarketOrder(coin_config.coin_market, 'buy', limit);
+        // let newBuyOrder = await restapiTrade.createMarketOrder(coin_config.coin_market, 'buy', limit);
         /**
          * BUY Set Price
          */
-        // let newBuyOrder = await restapiTrade.createLimitOrder(coin_config.coin_market, 'buy', limit, grid_buy);
+        let newBuyOrder = await restapiTrade.createLimitOrder(coin_config.coin_market, 'buy', limit, grid_buy);
         if(newBuyOrder.isActive === true){
           /**
            * SELL ทันที
